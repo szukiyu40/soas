@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>もし、あなたが分からないことが分かれば問題は半分は解けたようなもの！</title>
+    <style>
+        /* スタイルはそのままです */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        input[type="text"], button {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #botResponse {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="pageTitle">もし、あなたが分からないことが分かれば問題は半分は解けたようなもの！</h1>
+        <input type="text" id="userInput" placeholder="メッセージを入力してください..." />
+        <button type="button" onclick="sendMessage()">送信</button>
+        <p id="botResponse">返答はここに表示されます...</p>
+        <!-- 日英切り替えボタン -->
+        <button type="button" onclick="switchToEnglish()">Switch to English</button>
+        <button type="button" onclick="switchToJapanese()">Switch to Japanese</button>
+    </div>
+    <script>
+        function switchToEnglish() {
+            document.getElementById('pageTitle').innerText = "If you know you don't know, the problem is half solved!";
+        }
+        function switchToJapanese() {
+            document.getElementById('pageTitle').innerText = "もし、あなたが分からないことが分かれば問題は半分は解けたようなもの！";
+        }
+        // sendMessage関数はそのままです
+        function sendMessage() {
+            var userInput = document.getElementById('userInput').value;
+            fetch('http://seekunknown.com/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ message: userInput })
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                document.getElementById('botResponse').innerText = 'Bot: ' + data.response;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('botResponse').innerText = 'Error: Please try again later.';
+            });
+        }
+    </script>
+</body>
+</html>
