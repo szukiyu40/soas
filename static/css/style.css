@@ -1,0 +1,40 @@
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+#mainTitle {
+    font-family: 'Poppins', sans-serif; /* Stylish, modern font for the main title */
+    color: #2a9d8f; /* A vibrant, modern color */
+    font-size: 36px; /* Large size for emphasis */
+    text-align: center;
+    margin-top: 20px;
+}
+
+#pageTitle {
+    font-size: 18px; /* Smaller size for the Japanese text */
+    text-align: center;
+    color: #264653; /* Slightly darker to complement the main title */
+}
+
+
+#subTitle {
+    width: 90%; /* ボックスの幅を親要素の80%に設定 */
+    padding: 40px; /* すべての方向の内側の余白を20pxに設定 */
+    margin: auto; /* 上下左右の余白を自動調整し、中央寄せにする */
+}
+
+.navbar, .input-group, button, .search-area, #recentQA div {
+    /* Keep existing styles and add any specific new styles needed */
+}
+
+.logo {
+    display: block; /* Ensure the logo is block to center it */
+    margin: 0 auto; /* Center the logo horizontally */
+    max-width: 300px; /* Restrict size to maintain design */
+    height: auto; /* Maintain aspect ratio */
+}
+/* Additional responsive adjustments as before */
