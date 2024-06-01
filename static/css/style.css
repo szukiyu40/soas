@@ -38,3 +38,44 @@ body {
     height: auto; /* Maintain aspect ratio */
 }
 /* Additional responsive adjustments as before */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+}
+nav a {
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+}
+.question {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 20px 0;
+    background-color: #f9f9f9;
+}
+
+.vote {
+    margin-right: 5px;
+    background: none;
+    border: none;
+    color: green;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.vote.down {
+    color: red;
+}
+
+/* Add these styles to your existing style.css file */
+.langEn { 
+    display: none;  /* Initially hide English content */
+}
+
+.langJp { 
+    display: block; /* Initially show Japanese content */
+}

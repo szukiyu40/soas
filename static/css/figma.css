@@ -1,0 +1,1046 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 0px 0px;
+  position: relative;
+  background-color: #ffffff;
+}
+
+.page .top-bar {
+  display: flex;
+  width: 1440px;
+  height: 80px;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 6px #0000001f;
+}
+
+.page .rectangle {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background-color: #0000001a;
+  border-radius: 100px;
+}
+
+.page .title {
+  flex: 1;
+  font-family: "Roboto-Medium", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 28px;
+  line-height: 36px;
+  position: relative;
+  letter-spacing: 0;
+}
+
+.page .navbar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  position: relative;
+  flex: 0 0 auto;
+  background-color: #ffffff;
+}
+
+.page .tab {
+  position: relative;
+  width: fit-content;
+  font-family: "Roboto-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.page .textfield {
+  width: 200px;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 8px;
+  display: flex;
+  gap: 4px;
+  position: relative;
+  border-radius: 6px;
+  border: 1px solid;
+  border-color: #0000001a;
+}
+
+.page .text {
+  position: relative;
+  flex: 1;
+  margin-top: -1px;
+  font-family: "Roboto-Regular", Helvetica;
+  font-weight: 400;
+  color: #00000080;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 20px;
+}
+
+.page .ic-search {
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+
+.page .section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 60px 170px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+  background-color: #00000099;
+  overflow: hidden;
+}
+
+.page .avatar {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background-color: #d8d8d880;
+  border-radius: 50px;
+}
+
+.page .container {
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  flex-grow: 1;
+  display: flex;
+  position: relative;
+}
+
+.page .text-wrapper {
+  align-self: stretch;
+  margin-top: -1px;
+  font-family: "Roboto-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 24px;
+  line-height: 32px;
+  position: relative;
+  letter-spacing: 0;
+}
+
+.page .description {
+  color: #ffffff;
+  position: relative;
+  align-self: stretch;
+  font-family: "Roboto-Regular", Helvetica;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 24px;
+}
+
+.page .button {
+  flex-direction: column;
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 12px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.page .seconday {
+  width: 160px;
+  flex: 0 0 auto;
+  border-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  position: relative;
+  border-radius: 8px;
+  border: 1px solid;
+}
+
+.page .div {
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Roboto-Medium", Helvetica;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 24px;
+  white-space: nowrap;
+  position: relative;
+  letter-spacing: 0;
+}
+
+.page .primary {
+  width: 160px;
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  position: relative;
+  background-color: #000000;
+  border-radius: 8px;
+}
+
+.page .vector {
+  position: absolute;
+  width: 1440px;
+  height: 1px;
+  top: 228px;
+  left: 0;
+  object-fit: cover;
+}
+
+.page .div-2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  padding: 60px 170px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+  overflow: hidden;
+}
+
+.page .image-container {
+  flex: 1;
+  align-self: stretch;
+  flex-grow: 1;
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+}
+
+.page .image {
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  flex-grow: 1;
+  background-color: #d8d8d880;
+}
+
+.page .container-2 {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  flex: 1;
+  flex-grow: 1;
+  display: flex;
+  position: relative;
+}
+
+.page .container-3 {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+  display: flex;
+  position: relative;
+}
+
+.page .title-2 {
+  align-self: stretch;
+  margin-top: -1px;
+  font-family: "Roboto-Bold", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 40px;
+  line-height: 48px;
+  position: relative;
+  letter-spacing: 0;
+}
+
+.page .p {
+  color: #000000;
+  position: relative;
+  align-self: stretch;
+  font-family: "Roboto-Regular", Helvetica;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 24px;
+}
+
+.page .list {
+  align-items: center;
+  padding: 20px 0px;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+  position: relative;
+}
+
+.page .row {
+  align-items: flex-start;
+  gap: 40px;
+  display: flex;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.page .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  position: relative;
+  flex: 1;
+  flex-grow: 1;
+  background-color: #0000000d;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.page .user {
+  gap: 4px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.page .avatar-2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  flex: 1;
+  flex-grow: 1;
+}
+
+.page .avatar-3 {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  background-color: #0000001a;
+  border-radius: 32px;
+}
+
+.page .frame {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  flex: 1;
+  flex-grow: 1;
+}
+
+.page .title-3 {
+  align-self: stretch;
+  margin-top: -1px;
+  font-family: "Roboto-Medium", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 14px;
+  line-height: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  position: relative;
+  letter-spacing: 0;
+}
+
+.page .img {
+  position: relative;
+  width: 58.26px;
+  height: 9.81px;
+}
+
+.page .title-4 {
+  align-self: stretch;
+  height: 72px;
+  font-family: "Roboto-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 16px;
+  line-height: 24px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  position: relative;
+  letter-spacing: 0;
+}
+
+.page .vector-2 {
+  width: 1440px;
+  top: 468px;
+  position: absolute;
+  height: 1px;
+  left: 0;
+  object-fit: cover;
+}
+
+.page .form {
+  display: flex;
+  width: 1407px;
+  height: 538px;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  padding: 60px 170px;
+  position: relative;
+  overflow: hidden;
+}
+
+.page .container-4 {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  flex: 1;
+  flex-grow: 1;
+  display: flex;
+  position: relative;
+}
+
+.page .list-2 {
+  width: 503px;
+  height: 286px;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+  position: relative;
+}
+
+.page .input-wrapper {
+  align-items: flex-start;
+  gap: 200px;
+  margin-top: -44.5px;
+  display: flex;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.page .input {
+  display: flex;
+  flex-direction: column;
+  width: 508px;
+  height: 287px;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 4px;
+  position: relative;
+  margin-right: -5px;
+}
+
+.page .title-5 {
+  align-self: stretch;
+  font-family: "Roboto-Medium", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 14px;
+  line-height: 20px;
+  position: relative;
+  letter-spacing: 0;
+}
+
+.page .div-wrapper {
+  width: 508px;
+  height: 245px;
+  align-items: flex-start;
+  justify-content: space-around;
+  padding: 8px 12px;
+  background-color: #ffffff;
+  display: flex;
+  gap: 4px;
+  position: relative;
+  border-radius: 6px;
+  border: 1px solid;
+  border-color: #0000001a;
+}
+
+.page .text-2 {
+  height: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  position: relative;
+  flex: 1;
+  margin-top: -1px;
+  font-family: "Roboto-Regular", Helvetica;
+  font-weight: 400;
+  color: #00000080;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 20px;
+}
+
+.page .button-2 {
+  margin-bottom: -44.5px;
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 12px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.page .title-wrapper {
+  width: 240px;
+  border-color: #000000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  position: relative;
+  border-radius: 8px;
+  border: 1px solid;
+}
+
+.page .title-6 {
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Roboto-Medium", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 16px;
+  line-height: 24px;
+  white-space: nowrap;
+  position: relative;
+  letter-spacing: 0;
+}
+
+.page .primary-2 {
+  width: 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  position: relative;
+  background-color: #000000;
+  border-radius: 8px;
+}
+
+.page .vector-3 {
+  width: 1407px;
+  top: 538px;
+  position: absolute;
+  height: 1px;
+  left: 0;
+  object-fit: cover;
+}
+
+.page .div-3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  padding: 60px 170px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+  overflow: hidden;
+}
+
+.page .container-5 {
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+  display: flex;
+  position: relative;
+}
+
+.page .image-wrapper {
+  width: 180px;
+  height: 180px;
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+}
+
+.page .row-2 {
+  align-items: center;
+  gap: 40px;
+  display: flex;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.page .article {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 16px;
+  padding: 16px;
+  position: relative;
+  flex: 1;
+  flex-grow: 1;
+  border-radius: 6px;
+  border: 1px solid;
+  border-color: #0000001a;
+}
+
+.page .image-container-2 {
+  display: flex;
+  width: 100px;
+  height: 100px;
+  align-items: flex-start;
+  position: relative;
+}
+
+.page .frame-2 {
+  flex: 1;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  position: relative;
+}
+
+.page .title-7 {
+  align-self: stretch;
+  margin-top: -1px;
+  font-family: "Roboto-Medium", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 20px;
+  line-height: 28px;
+  position: relative;
+  letter-spacing: 0;
+}
+
+.page .selection {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 0px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.page .label-normal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  padding: 2px 4px;
+  position: relative;
+  flex: 0 0 auto;
+  background-color: #d8d8d880;
+  border-radius: 2px;
+  overflow: hidden;
+  border: 0.5px solid;
+  border-color: #0000001a;
+}
+
+.page .label-text {
+  position: relative;
+  width: fit-content;
+  margin-top: -0.5px;
+  font-family: "Roboto-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 16px;
+  white-space: nowrap;
+}
+
+.page .avatar-wrapper {
+  gap: 8px;
+  padding: 4px 0px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.page .avatar-4 {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  background-color: #0000001a;
+  border-radius: 20px;
+}
+
+.page .article-2 {
+  height: 188px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 16px;
+  padding: 16px;
+  position: relative;
+  flex: 1;
+  flex-grow: 1;
+  border-radius: 6px;
+  border: 1px solid;
+  border-color: #0000001a;
+}
+
+.page .label-text-wrapper {
+  display: flex;
+  width: 40px;
+  height: 20px;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  padding: 2px 4px;
+  position: relative;
+  background-color: #d8d8d880;
+  border-radius: 2px;
+  overflow: hidden;
+  border: 0.5px solid;
+  border-color: #0000001a;
+}
+
+.page .vector-4 {
+  width: 1440px;
+  top: 588px;
+  position: absolute;
+  height: 1px;
+  left: 0;
+  object-fit: cover;
+}
+
+.page .container-6 {
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+  display: flex;
+  position: relative;
+}
+
+.page .title-8 {
+  width: 520px;
+  margin-top: -1px;
+  font-family: "Roboto-Bold", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 40px;
+  text-align: center;
+  line-height: 48px;
+  position: relative;
+  letter-spacing: 0;
+}
+
+.page .row-wrapper {
+  align-items: center;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+  position: relative;
+}
+
+.page .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 12px 0px;
+  position: relative;
+  flex: 1;
+  flex-grow: 1;
+}
+
+.page .icon-wrapper {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background-color: #0000000d;
+  border-radius: 50px;
+}
+
+.page .icon {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: -1px;
+  left: 0;
+  font-family: "Roboto-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 62.5px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.page .frame-3 {
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  position: relative;
+}
+
+.page .title-9 {
+  align-self: stretch;
+  margin-top: -1px;
+  font-family: "Roboto-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 20px;
+  text-align: center;
+  line-height: 28px;
+  position: relative;
+  letter-spacing: 0;
+}
+
+.page .subtitle {
+  color: #00000080;
+  text-align: center;
+  position: relative;
+  align-self: stretch;
+  font-family: "Roboto-Regular", Helvetica;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 24px;
+}
+
+.page .vector-5 {
+  width: 1440px;
+  top: 432px;
+  position: absolute;
+  height: 1px;
+  left: 0;
+  object-fit: cover;
+}
+
+.page .union {
+  position: relative;
+  width: 1440px;
+  height: 352.3px;
+}
+
+.page .list-3 {
+  align-items: center;
+  flex: 1;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+  position: relative;
+}
+
+.page .vector-6 {
+  width: 1440px;
+  top: 380px;
+  position: absolute;
+  height: 1px;
+  left: 0;
+  object-fit: cover;
+}
+
+.page .container-wrapper {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  flex: 1;
+  align-self: stretch;
+  flex-grow: 1;
+  display: flex;
+  position: relative;
+}
+
+.page .container-7 {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 20px;
+  flex: 1;
+  align-self: stretch;
+  width: 100%;
+  flex-grow: 1;
+  border-radius: 6px;
+  border: 1px solid;
+  border-color: #0000001a;
+  display: flex;
+  position: relative;
+}
+
+.page .y-axis {
+  position: relative;
+  align-self: stretch;
+  font-family: "Roboto-Regular", Helvetica;
+  font-weight: 400;
+  color: #00000080;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 24px;
+}
+
+.page .graph {
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  width: 100%;
+  flex-grow: 1;
+}
+
+.page .x-axis {
+  position: relative;
+  align-self: stretch;
+  font-family: "Roboto-Regular", Helvetica;
+  font-weight: 400;
+  color: #00000080;
+  font-size: 16px;
+  text-align: right;
+  letter-spacing: 0;
+  line-height: 24px;
+}
+
+.page .button-3 {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 12px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.page .row-3 {
+  align-items: flex-start;
+  gap: 20px;
+  display: flex;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.page .metric {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  padding: 16px;
+  position: relative;
+  flex: 1;
+  flex-grow: 1;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid;
+  border-color: #0000001a;
+}
+
+.page .title-10 {
+  align-self: stretch;
+  margin-top: -1px;
+  font-family: "Roboto-Regular", Helvetica;
+  font-weight: 400;
+  color: #00000080;
+  font-size: 16px;
+  line-height: 24px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  position: relative;
+  letter-spacing: 0;
+}
+
+.page .data {
+  position: relative;
+  width: fit-content;
+  font-family: "Roboto-Medium", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 28px;
+  letter-spacing: 0;
+  line-height: 36px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.page .change {
+  position: relative;
+  width: fit-content;
+  font-family: "Roboto-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 24px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.page .vector-7 {
+  width: 1440px;
+  top: 472px;
+  position: absolute;
+  height: 1px;
+  left: 0;
+  object-fit: cover;
+}
