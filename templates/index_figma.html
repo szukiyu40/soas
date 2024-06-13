@@ -8,8 +8,6 @@
   <body>
     <div class="page">
       <div class="top-bar">
-        <!--ロゴのサイズを大きく -->
-        <img class="ic-search" src="/static/images/seekunknown.png" />  
         <div class="title">Seek the unknown</div>
         <div class="navbar">
           <div class="tab">Home</div>
@@ -22,11 +20,14 @@
         </div>
       </div>
       <div class="section">
-        <div class="avatar"></div>
+        <!--ロゴのサイズを横100px、縦100pxに設定-->
+        <div class="ic-search" src="/static/images/seekunknown.png"  width="100" height="100" alt="Seek the unknown"></div>
+
         <div class="container">
           <div class="text-wrapper">Welcome to our Platform!</div>
           <p class="description">Get answers to cutting-edge science and technology questions from experts or AI.</p>
         </div>
+        
         <div class="button">
           <div class="seconday"><div class="div">Browse Categories</div></div>
           <div class="primary"><div class="div">Ask Question</div></div>
@@ -34,7 +35,11 @@
         <img class="vector" src="img/vector-200-4.svg" />
       </div>
       <div class="div-2">
-        <div class="image-container"><div class="image"></div></div>
+        <div class="iframe-container">
+          <!-- カラフルな線を削除 -->
+          <iframe src="https://seekunknown.com/streamlit/" frameborder="0"></iframe>
+        </div>
+
         <div class="container-2">
           <div class="container-3">
             <div class="title-2">User Feedback</div>
@@ -134,36 +139,6 @@
         </div>
         <img class="vector-4" src="img/image.svg" />
       </div>
-      <div class="div-3">
-        <div class="container-6"><div class="title-8">Popular Topics</div></div>
-        <div class="row-wrapper">
-          <div class="row">
-            <div class="item">
-              <div class="icon-wrapper"><div class="icon">🔬</div></div>
-              <div class="frame-3">
-                <div class="title-9">Nanotechnology</div>
-                <div class="subtitle">Exploring the tiny world</div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="icon-wrapper"><div class="icon">🤖</div></div>
-              <div class="frame-3">
-                <div class="title-9">Robotics</div>
-                <div class="subtitle">Automation and innovation</div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="icon-wrapper"><div class="icon">🚀</div></div>
-              <div class="frame-3">
-                <div class="title-9">Space Exploration</div>
-                <div class="subtitle">Frontiers of the universe</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <img class="vector-5" src="img/vector-200-5.svg" />
-      </div>
-      <img class="union" src="img/union.svg" />
       <div class="div-2">
         <div class="container-4"><div class="title-2">Top Liked Questions</div></div>
         <div class="list-3">
