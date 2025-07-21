@@ -7,53 +7,327 @@
     <link rel="stylesheet" href="/static/css/style.css">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #f59e0b;
+            --success-color: #10b981;
+            --background-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --card-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            --card-hover-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
         body {
-            font-family: 'Noto Sans JP', sans-serif;
+            font-family: 'Inter', 'Noto Sans JP', sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            min-height: 100vh;
+        }
+        
+        .hero-section {
+            background: var(--background-gradient);
+            padding: 4rem 0 3rem;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-title {
+            color: white;
+            font-weight: 700;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hero-subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.25rem;
+            font-weight: 400;
+        }
+        
+        .modern-card {
+            background: white;
+            border: none;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .modern-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+        }
+        
+        .modern-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-hover-shadow);
+        }
+        
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+        
+        .section-text {
+            color: #6b7280;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        .contact-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-link:hover {
+            color: var(--secondary-color);
+            border-bottom-color: var(--accent-color);
+        }
+        
+        .navbar-modern {
+            background: rgba(255, 255, 255, 0.95) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 1rem 0;
+        }
+        
+        .navbar-brand-modern {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-color) !important;
+        }
+        
+        .nav-link-modern {
+            font-weight: 500;
+            color: #374151 !important;
+            padding: 0.5rem 1rem !important;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            margin: 0 0.25rem;
+        }
+        
+        .nav-link-modern:hover {
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary-color) !important;
+        }
+        
+        .nav-link-modern.active {
+            background: var(--primary-color);
+            color: white !important;
+        }
+        
+        .language-toggle {
+            background: linear-gradient(135deg, var(--accent-color), #f97316);
+            border: none;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+        }
+        
+        .language-toggle:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            .modern-card {
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>    
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
+    <!-- Modern Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-modern fixed-top">
+        <div class="container">
+            <a class="navbar-brand navbar-brand-modern" href="/">
+                <i class="bi bi-lightbulb"></i> Seek the Unknown
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                        <a class="nav-link nav-link-modern" href="/">
+                            <i class="bi bi-house"></i> Home
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/about">About</a>
+                        <a class="nav-link nav-link-modern active" href="/about">
+                            <i class="bi bi-info-circle"></i> About
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/share-question">Share Questions</a>
+                        <a class="nav-link nav-link-modern" href="/share-question">
+                            <i class="bi bi-share"></i> Share Questions
+                        </a>
                     </li>
                 </ul>
+                <button class="language-toggle" onclick="toggleLanguage()" id="languageToggle">
+                    <i class="bi bi-translate"></i> Switch to English
+                </button>
             </div>
-            <a class="nav-link" href="#" id="languageToggle" onclick="toggleLanguage()" style="color: #000;">Switch to English</a>
         </div>
     </nav>
-    <div class="container mt-5">
-        <h1 class="lang langEn" id="titleEn">About Us</h1>
-        <h1 class="lang langJp" id="titleJp">本サイトについて</h1>   
-        <p class="lang langEn" id="welcomeEn">Welcome to our website! Here at <strong>Seek the Unknown</strong>, we are dedicated to answering your queries and fostering a community of curious minds.</p>
-        <p class="lang" id="welcomeJp" style="display: none;">私たちのウェブサイトへようこそ！<strong>Seek the Unknown</strong>で、我々はあなたの質問に答え、好奇心旺盛なコミュニティを育てることに専念しています。</p>
-        <h2 class="lang langEn" id="missionEn">Our Mission</h2>
-        <h2 class="lang langJp" id="missionJp" style="display: none;">私たちの使命</h2>
-        <p class="lang langEn" id="missionTextEn">Our mission is to provide a platform where anyone can ask questions and get answers from the community or our AI systems. We believe in the power of knowledge and the collective wisdom of our users.</p>
-        <p class="lang langJp" id="missionTextJp" style="display: none;">私たちの使命は、誰もが質問を投げかけ、コミュニティやAIシステムから回答を得られるプラットフォームを提供することです。我々は知識の力とユーザーの集合知を信じています。</p>
-        <h2 class="lang langEn" id="teamEn">Team</h2>
-        <h2 class="lang langJp" id="teamJp" style="display: none;">チーム</h2>
-        <p class="lang langEn" id="teamTextEn">Our team consists of experienced professionals from various fields including technology, education, and customer service, all committed to delivering the best user experience and reliable information.</p>
-        <p class="lang langJp" id="teamTextJp" style="display: none;">当チームは、テクノロジー、教育、顧客サービスなど様々な分野の経験豊富なプロフェッショナルで構成されており、最高のユーザー体験と信頼できる情報の提供を目指しています。</p>
-        <h2 class="lang langEn" id="contactEn">Contact Us</h2>
-        <h2 class="lang langJp" id="contactJp" style="display: none;">お問い合わせ</h2>
-        <p class="lang langEn" id="contactTextEn">If you have any questions about our services or need support, please do not hesitate to <a href="mailto:info@seektheunknown.com">contact us</a>.</p>
-        <p class="lang langJp" id="contactTextJp" style="display: none;">もしサービスについての質問がある場合やサポートが必要な場合は、遠慮なく<a href="mailto:info@seektheunknown.com">お問い合わせください</a>。</p>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="container">
+            <div class="hero-content text-center">
+                <h1 class="hero-title lang langEn" id="titleEn">About Us</h1>
+                <h1 class="hero-title lang langJp" id="titleJp">本サイトについて</h1>   
+                <p class="hero-subtitle lang langEn" id="welcomeEn">Welcome to our website! Here at <strong>Seek the Unknown</strong>, we are dedicated to answering your queries and fostering a community of curious minds.</p>
+                <p class="hero-subtitle lang langJp" id="welcomeJp" style="display: none;">私たちのウェブサイトへようこそ！<strong>Seek the Unknown</strong>で、我々はあなたの質問に答え、好奇心旺盛なコミュニティを育てることに専念しています。</p>
+            </div>
+        </div>
     </div>
+
+    <!-- Main Content -->
+    <div class="container" style="padding-top: 2rem;">
+        <div class="row">
+            <!-- Mission Card -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="modern-card h-100">
+                    <div class="card-icon">
+                        <i class="bi bi-target"></i>
+                    </div>
+                    <h2 class="section-title lang langEn" id="missionEn">Our Mission</h2>
+                    <h2 class="section-title lang langJp" id="missionJp" style="display: none;">私たちの使命</h2>
+                    <p class="section-text lang langEn" id="missionTextEn">Our mission is to provide a platform where anyone can ask questions and get answers from the community or our AI systems. We believe in the power of knowledge and the collective wisdom of our users.</p>
+                    <p class="section-text lang langJp" id="missionTextJp" style="display: none;">私たちの使命は、誰もが質問を投げかけ、コミュニティやAIシステムから回答を得られるプラットフォームを提供することです。我々は知識の力とユーザーの集合知を信じています。</p>
+                </div>
+            </div>
+
+            <!-- Team Card -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="modern-card h-100">
+                    <div class="card-icon">
+                        <i class="bi bi-people"></i>
+                    </div>
+                    <h2 class="section-title lang langEn" id="teamEn">Team</h2>
+                    <h2 class="section-title lang langJp" id="teamJp" style="display: none;">チーム</h2>
+                    <p class="section-text lang langEn" id="teamTextEn">Our team consists of experienced professionals from various fields including technology, education, and customer service, all committed to delivering the best user experience and reliable information.</p>
+                    <p class="section-text lang langJp" id="teamTextJp" style="display: none;">当チームは、テクノロジー、教育、顧客サービスなど様々な分野の経験豊富なプロフェッショナルで構成されており、最高のユーザー体験と信頼できる情報の提供を目指しています。</p>
+                </div>
+            </div>
+
+            <!-- Contact Card -->
+            <div class="col-lg-4 col-md-12 mb-4">
+                <div class="modern-card h-100">
+                    <div class="card-icon">
+                        <i class="bi bi-envelope"></i>
+                    </div>
+                    <h2 class="section-title lang langEn" id="contactEn">Contact Us</h2>
+                    <h2 class="section-title lang langJp" id="contactJp" style="display: none;">お問い合わせ</h2>
+                    <p class="section-text lang langEn" id="contactTextEn">If you have any questions about our services or need support, please do not hesitate to <a href="mailto:info@seektheunknown.com" class="contact-link">contact us</a>.</p>
+                    <p class="section-text lang langJp" id="contactTextJp" style="display: none;">もしサービスについての質問がある場合やサポートが必要な場合は、遠慮なく<a href="mailto:info@seektheunknown.com" class="contact-link">お問い合わせください</a>。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Features Section -->
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="modern-card">
+                    <div class="text-center mb-4">
+                        <div class="card-icon mx-auto">
+                            <i class="bi bi-star"></i>
+                        </div>
+                        <h2 class="section-title lang langEn">Why Choose Us?</h2>
+                        <h2 class="section-title lang langJp" style="display: none;">なぜ私たちを選ぶのか？</h2>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-4 text-center mb-3">
+                            <div class="feature-item">
+                                <i class="bi bi-lightning-charge text-primary" style="font-size: 2rem;"></i>
+                                <h5 class="mt-3 lang langEn">Fast Responses</h5>
+                                <h5 class="mt-3 lang langJp" style="display: none;">高速回答</h5>
+                                <p class="section-text lang langEn">Get answers to your questions quickly with our AI-powered system.</p>
+                                <p class="section-text lang langJp" style="display: none;">AI搭載システムで素早く質問への回答を得られます。</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 text-center mb-3">
+                            <div class="feature-item">
+                                <i class="bi bi-shield-check text-success" style="font-size: 2rem;"></i>
+                                <h5 class="mt-3 lang langEn">Reliable Information</h5>
+                                <h5 class="mt-3 lang langJp" style="display: none;">信頼できる情報</h5>
+                                <p class="section-text lang langEn">All answers are carefully curated and verified for accuracy.</p>
+                                <p class="section-text lang langJp" style="display: none;">すべての回答は注意深く精査され、正確性が検証されています。</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 text-center mb-3">
+                            <div class="feature-item">
+                                <i class="bi bi-globe text-warning" style="font-size: 2rem;"></i>
+                                <h5 class="mt-3 lang langEn">Multilingual Support</h5>
+                                <h5 class="mt-3 lang langJp" style="display: none;">多言語サポート</h5>
+                                <p class="section-text lang langEn">Available in both Japanese and English for global accessibility.</p>
+                                <p class="section-text lang langJp" style="display: none;">グローバルなアクセシビリティのために日本語と英語に対応。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Spacing -->
+    <div style="height: 4rem;"></div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/static/js/languageToggle.js"></script>
 </body>
