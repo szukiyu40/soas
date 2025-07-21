@@ -2,200 +2,368 @@
 <html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seek the Unknown - Modern Interface</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Modern Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="/static/css/global.css" />
     <link rel="stylesheet" href="/static/css/figma.css" />
+    <link rel="stylesheet" href="/static/css/style.css" />
   </head>
   <body>
-    <div class="page">
-      <div class="top-bar">
-        <div class="title">Seek the unknown</div>
-        <div class="navbar">
-          <div class="tab">Home</div>
-          <div class="tab">About</div>
-          <div class="tab">Questions</div>
-          <div class="tab">Word Generation Graph</div>
-          <div class="textfield">
-            <div class="text">Search in site</div>
-          </div>
+    <!-- Modern Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand d-flex align-items-center" href="/">
+                <i class="bi bi-lightbulb-fill me-2"></i>
+                <span>Seek the Unknown</span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="bi bi-list"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/"><i class="bi bi-house-fill me-1"></i>Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about"><i class="bi bi-info-circle me-1"></i>About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/share-question"><i class="bi bi-share me-1"></i>Questions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#word-cloud"><i class="bi bi-diagram-3 me-1"></i>Word Graph</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <input type="search" class="form-control me-2" placeholder="Search in site" style="width: 200px;">
+                    <button class="btn btn-outline-primary" type="button">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="section">
-        <!--ロゴのサイズを横100px、縦100pxに設定-->
-        <div class="ic-search" src="/static/images/seekunknown.png"  width="100" height="100" alt="Seek the unknown"></div>
+    </nav>
 
+    <!-- Main Content -->
+    <div class="container-fluid" style="margin-top: 5rem;">
+      <!-- Hero Section -->
+      <section class="hero-section text-center py-5">
         <div class="container">
-          <div class="text-wrapper">Welcome to our Platform!</div>
-          <p class="description">Get answers to cutting-edge science and technology questions from experts or AI.</p>
-        </div>
-        
-        <div class="button">
-          <div class="seconday"><div class="div">Browse Categories</div></div>
-          <div class="primary"><div class="div">Ask Question</div></div>
-        </div>
-        <img class="vector" src="img/vector-200-4.svg" />
-      </div>
-      <div class="div-2">
-        <div class="iframe-container">
-          <!-- カラフルな線を削除 -->
-          <iframe src="https://seekunknown.com/streamlit/" frameborder="0"></iframe>
-        </div>
-
-        <div class="container-2">
-          <div class="container-3">
-            <div class="title-2">User Feedback</div>
-            <p class="p">See what our users say about the platform.</p>
-          </div>
-          <div class="list">
-            <div class="row">
-              <div class="card">
-                <div class="user">
-                  <div class="avatar-2">
-                    <div class="avatar-3"></div>
-                    <div class="frame"><div class="title-3">ScienceGeek101</div></div>
-                  </div>
-                  <img class="img" src="img/frame-427318817.svg" />
-                </div>
-                <p class="title-4">Great resource for tech enthusiasts</p>
+          <div class="row justify-content-center align-items-center">
+            <div class="col-lg-6">
+              <div class="mb-4">
+                <img src="/static/images/seekunknown.png" width="120" height="120" alt="Seek the unknown" 
+                     class="img-fluid rounded-circle shadow-lg">
               </div>
-              <div class="card">
-                <div class="user">
-                  <div class="avatar-2">
-                    <div class="avatar-3"></div>
-                    <div class="frame"><div class="title-3">TechWizard22</div></div>
-                  </div>
-                  <img class="img" src="img/frame-427318817-2.svg" />
-                </div>
-                <p class="title-4">Love the expert answers provided here</p>
+              <h1 class="display-4 fw-bold mb-3" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                Welcome to our Platform!
+              </h1>
+              <p class="lead text-muted mb-4">Get answers to cutting-edge science and technology questions from experts or AI.</p>
+              <div class="d-flex gap-3 justify-content-center flex-wrap">
+                <button class="btn btn-outline-primary btn-lg">
+                  <i class="bi bi-grid-3x3-gap me-2"></i>Browse Categories
+                </button>
+                <button class="btn btn-primary btn-lg">
+                  <i class="bi bi-question-circle me-2"></i>Ask Question
+                </button>
               </div>
             </div>
           </div>
         </div>
-        <img class="vector-2" src="img/vector-200-2.svg" />
-      </div>
-      <div class="form">
-        <div class="container-4">
-          <div class="title-2">Submit Your Question</div>
-          <p class="p">Have a burning question? Ask our experts or AI!</p>
-        </div>
-        <div class="list-2">
-          <div class="input-wrapper">
-            <div class="input">
-              <div class="title-5">Your Question</div>
-              <div class="div-wrapper"><div class="text-2">Enter your question here</div></div>
-            </div>
-          </div>
-          <div class="button-2">
-            <div class="title-wrapper"><div class="title-6">Clear</div></div>
-            <div class="primary-2"><div class="div">Submit Question</div></div>
-          </div>
-        </div>
-        <img class="vector-3" src="img/vector-200.svg" />
-      </div>
-      <div class="div-3">
-        <div class="container-5">
-          <div class="container-4">
-            <div class="title-2">Expert Answers</div>
-            <p class="p">Explore answers provided by field experts.</p>
-          </div>
-          <div class="image-wrapper"><div class="image"></div></div>
-        </div>
-        <div class="list">
-          <div class="row-2">
-            <div class="article">
-              <div class="image-container-2"><div class="image"></div></div>
-              <div class="frame-2">
-                <div class="title-7">Quantum Computing</div>
-                <p class="p">Discover the latest developments in quantum computing.</p>
-                <div class="selection">
-                  <div class="label-normal"><div class="label-text">Computing</div></div>
-                  <div class="label-normal"><div class="label-text">Quantum</div></div>
-                </div>
-                <div class="avatar-wrapper">
-                  <div class="avatar-2">
-                    <div class="avatar-4"></div>
-                    <div class="frame"><div class="title-3">Dr. Quantum</div></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="article-2">
-              <div class="image-container-2"><div class="image"></div></div>
-              <div class="frame-2">
-                <div class="title-7">Artificial Intelligence</div>
-                <p class="p">Deep dive into the advancements in AI technology.</p>
-                <div class="selection">
-                  <div class="label-text-wrapper"><div class="label-text">AI</div></div>
-                  <div class="label-normal"><div class="label-text">Technology</div></div>
-                </div>
-                <div class="avatar-wrapper">
-                  <div class="avatar-2">
-                    <div class="avatar-4"></div>
-                    <div class="frame"><div class="title-3">AI Insider</div></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <img class="vector-4" src="img/image.svg" />
-      </div>
-      <div class="div-2">
-        <div class="container-4"><div class="title-2">Top Liked Questions</div></div>
-        <div class="list-3">
+      </section>
+      <!-- Streamlit Integration Section -->
+      <section class="py-5" id="word-cloud">
+        <div class="container">
           <div class="row">
-            <div class="item">
-              <div class="icon-wrapper"><div class="icon">❓</div></div>
-              <div class="frame-3">
-                <p class="title-9">How will AI impact the future job market?</p>
-                <div class="subtitle">Technology and employment</div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="icon-wrapper"><div class="icon">❓</div></div>
-              <div class="frame-3">
-                <p class="title-9">What are the potential applications of CRISPR technology?</p>
-                <div class="subtitle">Genetic engineering</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <img class="vector-6" src="img/vector-200-6.svg" />
-      </div>
-      <div class="div-2">
-        <div class="container-wrapper">
-          <div class="container-7">
-            <div class="title-7">Likes Summary</div>
-            <div class="y-axis">Likes</div>
-            <img class="graph" src="img/graph.svg" />
-            <div class="x-axis">Questions/Answers</div>
-          </div>
-        </div>
-        <div class="container-2">
-          <div class="container-3">
-            <div class="title-2">User Contributions</div>
-            <p class="p">Track your contributions and likes to earn NFTs/Crypto!</p>
-            <div class="button-3">
-              <div class="title-wrapper"><div class="title-6">Learn More</div></div>
-              <div class="primary-2"><div class="div">View My Wallet</div></div>
-            </div>
-          </div>
-          <div class="row-wrapper">
-            <div class="row-3">
-              <div class="metric">
-                <div class="title-10">Total Likes</div>
-                <div class="data">36</div>
-                <div class="change">+4</div>
-              </div>
-              <div class="metric">
-                <div class="title-10">NFTs Earned</div>
-                <div class="data">2</div>
-                <div class="change">+1</div>
+            <div class="col-12">
+              <div class="modern-card text-center">
+                <h3 class="mb-3">
+                  <i class="bi bi-graph-up me-2"></i>Interactive Question Analytics
+                </h3>
+                <p class="text-muted mb-4">Explore question patterns and insights through our interactive dashboard</p>
+                <div class="iframe-container" style="background: transparent; box-shadow: none; padding: 1rem;">
+                  <iframe src="https://seekunknown.com/streamlit/" frameborder="0" 
+                          style="width: 100%; height: 500px; border-radius: var(--radius-lg);"></iframe>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <img class="vector-7" src="img/vector-200-3.svg" />
-      </div>
+      </section>
+
+      <!-- User Feedback Section -->
+      <section class="py-5" style="background: var(--background-accent);">
+        <div class="container">
+          <div class="text-center mb-5">
+            <h2 class="fw-bold mb-3">
+              <i class="bi bi-star-fill me-2"></i>User Feedback
+            </h2>
+            <p class="text-muted">See what our users say about the platform.</p>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-4">
+              <div class="modern-card h-100">
+                <div class="d-flex align-items-center mb-3">
+                  <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center me-3" 
+                       style="width: 50px; height: 50px;">
+                    <i class="bi bi-person-fill text-white"></i>
+                  </div>
+                  <div>
+                    <h6 class="mb-0 fw-bold">ScienceGeek101</h6>
+                    <div class="text-warning">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                    </div>
+                  </div>
+                </div>
+                <p class="mb-0 text-muted">"Great resource for tech enthusiasts. The AI responses are incredibly detailed and helpful."</p>
+              </div>
+            </div>
+            <div class="col-md-6 mb-4">
+              <div class="modern-card h-100">
+                <div class="d-flex align-items-center mb-3">
+                  <div class="bg-success rounded-circle d-flex align-items-center justify-content-center me-3" 
+                       style="width: 50px; height: 50px;">
+                    <i class="bi bi-person-fill text-white"></i>
+                  </div>
+                  <div>
+                    <h6 class="mb-0 fw-bold">TechWizard22</h6>
+                    <div class="text-warning">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                    </div>
+                  </div>
+                </div>
+                <p class="mb-0 text-muted">"Love the expert answers provided here. The community is knowledgeable and supportive."</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Question Submission Form -->
+      <section class="py-5">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <div class="modern-card">
+                <div class="text-center mb-4">
+                  <h3 class="fw-bold mb-3">
+                    <i class="bi bi-question-circle me-2"></i>Submit Your Question
+                  </h3>
+                  <p class="text-muted">Have a burning question? Ask our experts or AI!</p>
+                </div>
+                <form>
+                  <div class="mb-4">
+                    <label for="questionInput" class="form-label fw-semibold">Your Question</label>
+                    <textarea class="form-control" id="questionInput" rows="4" 
+                              placeholder="Enter your question here..."></textarea>
+                  </div>
+                  <div class="d-flex gap-3 justify-content-end">
+                    <button type="reset" class="btn btn-outline-secondary">
+                      <i class="bi bi-arrow-clockwise me-1"></i>Clear
+                    </button>
+                    <button type="submit" class="btn btn-primary">
+                      <i class="bi bi-send me-1"></i>Submit Question
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Expert Answers Section -->
+      <section class="py-5" style="background: var(--background-accent);">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-4 mb-4">
+              <div class="text-center">
+                <h2 class="fw-bold mb-3">
+                  <i class="bi bi-mortarboard me-2"></i>Expert Answers
+                </h2>
+                <p class="text-muted">Explore answers provided by field experts.</p>
+                <div class="bg-primary rounded-circle mx-auto d-flex align-items-center justify-content-center" 
+                     style="width: 120px; height: 120px;">
+                  <i class="bi bi-lightbulb-fill text-white display-4"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-8">
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="modern-card h-100">
+                    <div class="mb-3">
+                      <div class="bg-info rounded d-flex align-items-center justify-content-center mb-3" 
+                           style="height: 120px;">
+                        <i class="bi bi-cpu-fill text-white display-5"></i>
+                      </div>
+                    </div>
+                    <h5 class="fw-bold mb-2">Quantum Computing</h5>
+                    <p class="text-muted mb-3">Discover the latest developments in quantum computing.</p>
+                    <div class="d-flex gap-2 mb-3">
+                      <span class="badge bg-primary">Computing</span>
+                      <span class="badge bg-secondary">Quantum</span>
+                    </div>
+                    <div class="d-flex align-items-center">
+                      <div class="bg-warning rounded-circle d-flex align-items-center justify-content-center me-2" 
+                           style="width: 30px; height: 30px;">
+                        <i class="bi bi-person-fill text-white small"></i>
+                      </div>
+                      <small class="fw-semibold">Dr. Quantum</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="modern-card h-100">
+                    <div class="mb-3">
+                      <div class="bg-success rounded d-flex align-items-center justify-content-center mb-3" 
+                           style="height: 120px;">
+                        <i class="bi bi-robot text-white display-5"></i>
+                      </div>
+                    </div>
+                    <h5 class="fw-bold mb-2">Artificial Intelligence</h5>
+                    <p class="text-muted mb-3">Deep dive into the advancements in AI technology.</p>
+                    <div class="d-flex gap-2 mb-3">
+                      <span class="badge bg-primary">AI</span>
+                      <span class="badge bg-secondary">Technology</span>
+                    </div>
+                    <div class="d-flex align-items-center">
+                      <div class="bg-danger rounded-circle d-flex align-items-center justify-content-center me-2" 
+                           style="width: 30px; height: 30px;">
+                        <i class="bi bi-person-fill text-white small"></i>
+                      </div>
+                      <small class="fw-semibold">AI Insider</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Top Liked Questions Section -->
+      <section class="py-5">
+        <div class="container">
+          <div class="text-center mb-5">
+            <h2 class="fw-bold mb-3">
+              <i class="bi bi-heart-fill me-2"></i>Top Liked Questions
+            </h2>
+            <p class="text-muted">Most popular questions from our community</p>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-4">
+              <div class="modern-card h-100">
+                <div class="d-flex align-items-start">
+                  <div class="bg-warning rounded-circle d-flex align-items-center justify-content-center me-3 flex-shrink-0" 
+                       style="width: 60px; height: 60px;">
+                    <i class="bi bi-question-lg text-white h4 mb-0"></i>
+                  </div>
+                  <div>
+                    <h6 class="fw-bold mb-2">How will AI impact the future job market?</h6>
+                    <p class="text-muted small mb-0">Technology and employment</p>
+                    <div class="d-flex align-items-center mt-2">
+                      <i class="bi bi-heart-fill text-danger me-1"></i>
+                      <span class="small text-muted">142 likes</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-4">
+              <div class="modern-card h-100">
+                <div class="d-flex align-items-start">
+                  <div class="bg-info rounded-circle d-flex align-items-center justify-content-center me-3 flex-shrink-0" 
+                       style="width: 60px; height: 60px;">
+                    <i class="bi bi-question-lg text-white h4 mb-0"></i>
+                  </div>
+                  <div>
+                    <h6 class="fw-bold mb-2">What are the potential applications of CRISPR technology?</h6>
+                    <p class="text-muted small mb-0">Genetic engineering</p>
+                    <div class="d-flex align-items-center mt-2">
+                      <i class="bi bi-heart-fill text-danger me-1"></i>
+                      <span class="small text-muted">98 likes</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Analytics and Rewards Section -->
+      <section class="py-5" style="background: var(--background-accent);">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-6 mb-4">
+              <div class="modern-card">
+                <h4 class="fw-bold mb-3">
+                  <i class="bi bi-graph-up me-2"></i>Likes Summary
+                </h4>
+                <div class="text-center">
+                  <div class="bg-gradient rounded p-4" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));">
+                    <i class="bi bi-bar-chart-fill text-white display-6"></i>
+                  </div>
+                  <p class="text-muted mt-3 mb-0">Interactive analytics dashboard</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 mb-4">
+              <div class="modern-card">
+                <div class="mb-4">
+                  <h4 class="fw-bold mb-3">
+                    <i class="bi bi-trophy me-2"></i>User Contributions
+                  </h4>
+                  <p class="text-muted">Track your contributions and likes to earn NFTs/Crypto!</p>
+                  <div class="d-flex gap-3">
+                    <button class="btn btn-outline-primary">
+                      <i class="bi bi-info-circle me-1"></i>Learn More
+                    </button>
+                    <button class="btn btn-primary">
+                      <i class="bi bi-wallet2 me-1"></i>View My Wallet
+                    </button>
+                  </div>
+                </div>
+                <div class="row text-center">
+                  <div class="col-6">
+                    <div class="stats-card">
+                      <div class="stats-number">36</div>
+                      <div class="stats-label">Total Likes</div>
+                      <div class="text-success small fw-semibold">+4 this week</div>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="stats-card">
+                      <div class="stats-number">2</div>
+                      <div class="stats-label">NFTs Earned</div>
+                      <div class="text-success small fw-semibold">+1 this week</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

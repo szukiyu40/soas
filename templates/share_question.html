@@ -8,97 +8,213 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Modern Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Noto Sans JP', sans-serif;
-        }
-        .container {
-            margin-top: 20px;
-        }
-        .question {
-            margin-bottom: 20px;
-        }
         .iframe-container {
-            margin-top: 20px;
+            margin: 2rem 0;
             text-align: center;
-        }
-        .main-message {
-            margin-top: 20px;
-            text-align: center;
+            background: var(--background-primary);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            padding: 2rem;
+            border: 1px solid var(--border-color);
         }
         .iframe-container iframe {
             width: 100%;
             height: 600px;
-            max-width: 800px;
+            max-width: 100%;
             border: none;
+            border-radius: var(--radius-md);
+        }
+        .main-message {
+            text-align: center;
+            padding: 3rem 0;
+        }
+        .value-proposition {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 3rem 0;
+            border-radius: var(--radius-xl);
+            margin: 2rem 0;
+            text-align: center;
+        }
+        .value-proposition h1 {
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .stats-row {
+            background: var(--background-primary);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+            margin: 2rem 0;
         }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand d-flex align-items-center" href="/">
+                <i class="bi bi-lightbulb-fill me-2"></i>
+                <span class="langEn">Seek the Unknown</span>
+                <span class="langJp">Seek the Unknown</span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="bi bi-list"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link active langEn" aria-current="page" href="/">Home</a>
-                        <a class="nav-link active langJp" aria-current="page" href="/">ホーム</a>
+                        <a class="nav-link langEn" href="/">
+                            <i class="bi bi-house-fill me-1"></i>Home
+                        </a>
+                        <a class="nav-link langJp" href="/">
+                            <i class="bi bi-house-fill me-1"></i>ホーム
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link langEn" href="/about">About</a>
-                        <a class="nav-link langJp" href="/about">このサイトについて</a>
+                        <a class="nav-link langEn" href="/about">
+                            <i class="bi bi-info-circle me-1"></i>About
+                        </a>
+                        <a class="nav-link langJp" href="/about">
+                            <i class="bi bi-info-circle me-1"></i>このサイトについて
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link langEn" href="/share-question">Share Questions</a>
-                        <a class="nav-link langJp" href="/share-question">質問を共有する</a>
+                        <a class="nav-link active langEn" href="/share-question">
+                            <i class="bi bi-share me-1"></i>Share Questions
+                        </a>
+                        <a class="nav-link active langJp" href="/share-question">
+                            <i class="bi bi-share me-1"></i>質問を共有する
+                        </a>
                     </li>
                 </ul>
+                <button class="btn" id="languageToggle" onclick="toggleLanguage()">
+                    <i class="bi bi-translate me-1"></i>Switch to English
+                </button>
             </div>
-            <a class="nav-link" href="#" id="languageToggle" onclick="toggleLanguage()" style="color: #000;">Switch to English</a>
         </div>
     </nav>
 
     <div class="container">
-        <div class="main-message">
-            <h1  id="mainTitle" class="langJp">質問が生み出す価値</h1>
-            <p  class="langJp">
-                質問は新たな価値を生み出し、その先に新たな質問が生まれるサイクルを作ります。<br>
-            </p >
-            <h1  id="mainTitle" class="langEn">The Power of Questions</h1>
-            <p class="langEn">
-                Questions generate value, and ideas generate questions, creating an endless cycle of inquiry and innovation.<br>
-            </p>
+        <!-- Hero Section with Value Proposition -->
+        <div class="value-proposition">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h1 class="langJp">
+                        <i class="bi bi-lightbulb me-2"></i>質問が生み出す価値
+                    </h1>
+                    <h1 class="langEn">
+                        <i class="bi bi-lightbulb me-2"></i>The Power of Questions
+                    </h1>
+                    <p class="lead langJp">
+                        質問は新たな価値を生み出し、その先に新たな質問が生まれるサイクルを作ります。<br>
+                        知識の共有で、より良い未来を築きましょう。
+                    </p>
+                    <p class="lead langEn">
+                        Questions generate value, and ideas generate questions, creating an endless cycle of inquiry and innovation.<br>
+                        Let's build a better future through knowledge sharing.
+                    </p>
+                </div>
+            </div>
         </div>
         
+        <!-- Interactive Section -->
         <div class="iframe-container">
+            <div class="mb-3">
+                <h3 class="langEn">
+                    <i class="bi bi-graph-up me-2"></i>Interactive Question Explorer
+                </h3>
+                <h3 class="langJp">
+                    <i class="bi bi-graph-up me-2"></i>インタラクティブ質問エクスプローラー
+                </h3>
+                <p class="text-muted langEn">Discover patterns and insights from community questions</p>
+                <p class="text-muted langJp">コミュニティの質問からパターンと洞察を発見しよう</p>
+            </div>
             <iframe src="https://seekunknown.com/streamlit/" frameborder="0"></iframe>
         </div>
 
-        <h1 class="langEn">Shared Questions Recently</h1>
-        <h1 class="langJp">最近投稿された質問</h1>
-        <div id="questionsList">
-            {% if messages %}
-                {% for message in messages %}
-                    <div class="question">
-                        <p><strong class="langEn">Question:</strong> <strong class="langJp">質問:</strong> {{ message.message }}</p>
-                        <p><strong class="langEn">Answer:</strong> <strong class="langJp">回答:</strong> {{ message.response }}</p>
-                        
-                        <button class="btn btn-success good-button" data-message-id="{{ message.id }}">Good</button>
-                        <button class="btn btn-danger bad-button" data-message-id="{{ message.id }}">Bad</button>
-                        
-                        <div>
-                            Upvotes: <span id="upvotes_{{ message.id }}">{{ message.upvotes }}</span>
-                            Downvotes: <span id="downvotes_{{ message.id }}">{{ message.downvotes }}</span>
-                        </div>
+        <!-- Recent Questions Section -->
+        <div class="modern-section">
+            <div class="text-center mb-4">
+                <h2 class="langEn">
+                    <i class="bi bi-chat-square-dots me-2"></i>Shared Questions Recently
+                </h2>
+                <h2 class="langJp">
+                    <i class="bi bi-chat-square-dots me-2"></i>最近投稿された質問
+                </h2>
+                <p class="text-muted langEn">Join the conversation and share your thoughts</p>
+                <p class="text-muted langJp">会話に参加してあなたの考えをシェアしましょう</p>
+            </div>
+            
+            <div id="questionsList">
+                {% if messages %}
+                    <div class="modern-grid">
+                        {% for message in messages %}
+                            <div class="question">
+                                <div class="d-flex justify-content-between align-items-start mb-3">
+                                    <span class="badge bg-primary">#{{ loop.index }}</span>
+                                    <div class="d-flex gap-2">
+                                        <div class="stats-card bg-light">
+                                            <div class="stats-number text-success">{{ message.upvotes or 0 }}</div>
+                                            <div class="stats-label">賛成</div>
+                                        </div>
+                                        <div class="stats-card bg-light">
+                                            <div class="stats-number text-danger">{{ message.downvotes or 0 }}</div>
+                                            <div class="stats-label">反対</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <div class="d-flex align-items-start mb-2">
+                                        <i class="bi bi-question-circle-fill text-primary me-2 mt-1"></i>
+                                        <div>
+                                            <strong class="langEn text-primary">Question:</strong>
+                                            <strong class="langJp text-primary">質問:</strong>
+                                            <p class="mb-0 mt-1">{{ message.message }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <div class="d-flex align-items-start">
+                                        <i class="bi bi-robot text-info me-2 mt-1"></i>
+                                        <div>
+                                            <strong class="langEn text-info">Answer:</strong>
+                                            <strong class="langJp text-info">回答:</strong>
+                                            <p class="mb-0 mt-1">{{ message.response }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="d-flex gap-2 mt-3">
+                                    <button class="btn btn-success good-button flex-fill" data-message-id="{{ message.id }}">
+                                        <i class="bi bi-hand-thumbs-up-fill me-1"></i>Good
+                                    </button>
+                                    <button class="btn btn-danger bad-button flex-fill" data-message-id="{{ message.id }}">
+                                        <i class="bi bi-hand-thumbs-down-fill me-1"></i>Bad
+                                    </button>
+                                </div>
+                            </div>
+                        {% endfor %}
                     </div>
-                {% endfor %}
-            {% else %}
-                <p class="langEn">No questions available.</p>
-                <p class="langJp">質問はありません。</p>
-            {% endif %}     
+                {% else %}
+                    <div class="text-center py-5">
+                        <i class="bi bi-inbox display-1 text-muted"></i>
+                        <h4 class="langEn text-muted mt-3">No questions available.</h4>
+                        <h4 class="langJp text-muted mt-3">質問はありません。</h4>
+                        <p class="langEn text-muted">Be the first to share a question!</p>
+                        <p class="langJp text-muted">最初に質問を共有してみませんか？</p>
+                    </div>
+                {% endif %}     
+            </div>
         </div>
     </div>
     
